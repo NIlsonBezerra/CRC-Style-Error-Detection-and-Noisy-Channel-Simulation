@@ -22,8 +22,7 @@ Noise is modeled using independent Bernoulli trials, and checksum verification i
 | Component | Language | Description |
 |---------|----------|-------------|
 | **Visualizer** | Python | A graphical “conveyor belt” simulation illustrating message transmission, bit-level noise, checksum verification, and ACK/NACK decisions in real time. |
-| **Statistical Analysis** | Python / Spreadsheet | Empirical results derived from large-scale Monte Carlo simulations (up to 1,000,000 trials per noise level), summarized in tabular form. |
-| **Presentation** | PDF | Slides describing the system model, probability analysis, and observed detection limits. |
+| **Statistical Analysis** | Python | Empirical results derived from large-scale Monte Carlo simulations (up to 1,000,000 trials per noise level), summarized in tabular form. |
 
 ---
 
@@ -66,15 +65,6 @@ The receiver implements a simple **Automatic Repeat Request (ARQ)** strategy:
 
 This allows observation of retransmission growth as channel noise increases.
 
----
-
-## Performance Analysis Summary
-
-As documented in the accompanying presentation and probability tables:
-
-- **Detection effectiveness:** The modulo-7 checksum provides reliable detection at low to moderate noise levels.
-- **Retransmission behavior:** Retransmission rates increase rapidly as noise approaches higher probabilities, illustrating diminishing network efficiency.
-- **Theoretical limitation:** Collisions occur when distinct data values produce identical modulo-7 checksums, demonstrating inherent limits of simple checksum-based detection.
 
 ---
 
